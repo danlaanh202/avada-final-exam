@@ -54,6 +54,7 @@ const items = [
 ];
 export default function NotificationResourceList() {
   const [sortValue, setSortValue] = useState("DATE_MODIFIED_DESC");
+  const [loading, setLoading] = useState(true);
   const [notifications, setNotifications] = useState([]);
   const [selectedItems, setSelectedItems] = useState([]);
   const resourceName = {
@@ -69,11 +70,13 @@ export default function NotificationResourceList() {
   ) : undefined;
   useEffect(() => {
     setNotifications(items);
+    setLoading(false);
   }, []);
   return (
     <>
       <LegacyCard>
         <ResourceList
+          loading={loading}
           resourceName={resourceName}
           items={notifications}
           renderItem={NotificationResourceItem}
