@@ -1,4 +1,4 @@
-import { LegacyCard, RangeSlider } from "@shopify/polaris";
+import { Card, RangeSlider } from "@shopify/polaris";
 import { useState, useCallback } from "react";
 
 export default function MyRangeSlider({

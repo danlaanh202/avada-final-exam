@@ -1,4 +1,4 @@
-import { Text, VerticalStack } from "@shopify/polaris";
+import { TextStyle, Stack } from "@shopify/polaris";
 import MyRangeSlider from "../../ui/MyRangeSlider";
 
 const SettingSliderItem = ({
@@ -10,7 +10,7 @@ const SettingSliderItem = ({
   onChange,
 }) => {
   return (
-    <VerticalStack gap={2} align="start">
+    <Stack vertical>
       <MyRangeSlider
         label={label}
         suffixUnit={suffixUnit}
@@ -18,10 +18,10 @@ const SettingSliderItem = ({
         sliderId={sliderId}
         onChange={onChange}
       />
-      <Text variant="bodySm" as="span" color="subdued">
+      <TextStyle variant="bodySm" as="span" color="subdued">
         {description}
-      </Text>
-    </VerticalStack>
+      </TextStyle>
+    </Stack>
   );
 };
 

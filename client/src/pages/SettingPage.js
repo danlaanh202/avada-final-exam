@@ -1,9 +1,9 @@
-import { Box, Page } from "@shopify/polaris";
-import { SaveMinor } from "@shopify/polaris-icons";
-import { useState } from "react";
-import SettingsTab from "../components/settings/SettingsTab";
-import NotificationProductItem from "../components/notification/NotificationProductItem";
 import defaultSettings from "../helpers/constants/defaultSettings";
+import SettingsTab from "../components/settings/SettingsTab";
+import { useState } from "react";
+import { Page } from "@shopify/polaris";
+import { SaveMinor } from "@shopify/polaris-icons";
+import { NotificationPopup } from "../components/notification/NotificationPopup/NotificationPopup";
 
 const SettingPage = () => {
   const [settings, setSettings] = useState(defaultSettings);
@@ -27,13 +27,8 @@ const SettingPage = () => {
       }}
     >
       <div className="setting-page">
-        <Box
-          as="section"
-          paddingInlineStart={{ xs: 4, sm: 0 }}
-          paddingInlineEnd={{ xs: 4, sm: 0 }}
-        >
-          <NotificationProductItem />
-        </Box>
+        <NotificationPopup />
+
         <div className="setting-tab">
           <SettingsTab
             settings={settings}

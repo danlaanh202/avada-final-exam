@@ -1,6 +1,6 @@
-import React from "react";
+import "./NotificationPopup.css";
 import moment from "moment";
-import truncateString from "../../helpers/utils/TruncateString";
+import truncateString from "../../../helpers/utils/TruncateString";
 
 export const NotificationPopup = ({
   firstName = "John Doe",
@@ -8,7 +8,7 @@ export const NotificationPopup = ({
   country = "United States",
   productName = "Puffer Jacket With Hidden Hood",
   timestamp = `${new Date()}`,
-  productImage = "http://paris.mageplaza.com/images/shop/single/big-1.jpg",
+  productImage = "https://media.istockphoto.com/id/1350560575/photo/pair-of-blue-running-sneakers-on-white-background-isolated.webp?b=1&s=170667a&w=0&k=20&c=liUSgX6SafJ7HWvefFqR9-pnf3KuH6v1lwQ6iEpePWc=",
   settings = { hideTimeAgo: false, truncateProductName: false },
 }) => {
   const { hideTimeAgo, truncateProductName } = settings;

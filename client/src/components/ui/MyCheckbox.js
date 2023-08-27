@@ -1,5 +1,4 @@
-import { Checkbox, Text } from "@shopify/polaris";
-import { useState, useCallback } from "react";
+import { Checkbox, TextStyle } from "@shopify/polaris";
 
 const MyCheckbox = ({
   label = "",
@@ -12,7 +11,7 @@ const MyCheckbox = ({
       <Checkbox label={label} checked={checked} onChange={onChange} />
       {helptext && (
         <div className="helptext-wrapper">
-          <Text color="subdued">{helptext}</Text>
+          <TextStyle color="subdued">{helptext}</TextStyle>
         </div>
       )}
     </div>

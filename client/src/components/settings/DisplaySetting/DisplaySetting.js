@@ -1,4 +1,5 @@
-import { Text, VerticalStack } from "@shopify/polaris";
+import "./DisplaySetting.css";
+import { TextStyle, Stack } from "@shopify/polaris";
 import DesktopPositionInput from "../DesktopPositionInput/DesktopPositionInput";
 import MyCheckbox from "../../ui/MyCheckbox";
 import SettingSliderItem from "./SettingSliderItem";
@@ -34,10 +35,8 @@ const sliderSettings = [
 ];
 const DisplaySetting = ({ settings = defaultSettings, handleChangeInput }) => {
   return (
-    <VerticalStack gap={4}>
-      <Text as="h4" variant="headingXs">
-        APPEARANCE
-      </Text>
+    <Stack vertical>
+      <TextStyle variation="strong">APPEARANCE</TextStyle>
       <DesktopPositionInput
         label="Desktop Position"
         value={settings.position}
@@ -64,10 +63,8 @@ const DisplaySetting = ({ settings = defaultSettings, handleChangeInput }) => {
           )
         }
       />
-      <Text as="h4" variant="headingXs">
-        TIMING
-      </Text>
-      <VerticalStack align="space-between" gap={4}>
+      <TextStyle variation="strong">TIMING</TextStyle>
+      <Stack vertical gap={4}>
         {sliderSettings?.length > 0 &&
           sliderSettings.map(
             (item, index, arr) =>
@@ -98,8 +95,8 @@ const DisplaySetting = ({ settings = defaultSettings, handleChangeInput }) => {
                 </div>
               )
           )}
-      </VerticalStack>
-    </VerticalStack>
+      </Stack>
+    </Stack>
   );
 };
 

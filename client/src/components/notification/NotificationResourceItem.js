@@ -1,26 +1,17 @@
-import {
-  Box,
-  HorizontalStack,
-  ResourceItem,
-  SkeletonBodyText,
-  SkeletonDisplayText,
-  Text,
-} from "@shopify/polaris";
+import { Stack, ResourceItem, TextStyle } from "@shopify/polaris";
 import React from "react";
-import NotificationProductItem from "./NotificationProductItem";
-import { NotificationPopup } from "./NotificationPopup";
+
+import { NotificationPopup } from "./NotificationPopup/NotificationPopup";
 
 const NotificationResourceItem = (item) => {
   const { id, name } = item;
 
   return (
     <ResourceItem id={id} accessibilityLabel={`View details for ${name}`}>
-      <HorizontalStack align="space-between">
-        <NotificationProductItem />
-        <Box as="div" width="120px">
-          <Text alignment="end">From march 8, 2021</Text>
-        </Box>
-      </HorizontalStack>
+      <Stack distribution="equalSpacing">
+        <NotificationPopup />
+        <TextStyle>From march 8, 2021</TextStyle>
+      </Stack>
     </ResourceItem>
   );
 };

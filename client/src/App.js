@@ -26,6 +26,15 @@ const App = () => {
             },
           },
         }}
+        theme={{
+          logo: {
+            width: 124,
+            topBarSource: "https://i.imgur.com/LTYRxl7.png",
+            contextualSaveBarSource: "https://i.imgur.com/LTYRxl7.png",
+            url: "#",
+            accessibilityLabel: "Logo",
+          },
+        }}
       >
         <Routes>
           <Route

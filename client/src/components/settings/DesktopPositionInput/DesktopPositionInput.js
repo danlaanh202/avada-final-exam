@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./DesktopPositionInput.css";
-import { HorizontalStack, Labelled, Text } from "@shopify/polaris";
+import { Stack, Labelled, TextStyle } from "@shopify/polaris";
 
 const defaultOptions = [
   { label: "Bottom left", value: "bottom-left" },
@@ -19,7 +19,7 @@ const DesktopPositionInput = ({
 }) => {
   return (
     <Labelled label={label}>
-      <HorizontalStack gap={4}>
+      <Stack gap={4}>
         {options.map((option, key) => (
           <div
             key={key}
@@ -33,8 +33,8 @@ const DesktopPositionInput = ({
             ></div>
           </div>
         ))}
-      </HorizontalStack>
-      <Text variation="subdued">{helpText}</Text>
+      </Stack>
+      <TextStyle variation="subdued">{helpText}</TextStyle>
     </Labelled>
   );
 };

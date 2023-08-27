@@ -1,8 +1,8 @@
 import {
-  LegacyCard,
+  Card,
   ResourceList,
   Pagination,
-  HorizontalStack,
+  Stack,
   Box,
   EmptyState,
 } from "@shopify/polaris";
@@ -53,8 +53,8 @@ const items = [
   },
 ];
 export default function NotificationResourceList() {
-  const [sortValue, setSortValue] = useState("DATE_MODIFIED_DESC");
   const [loading, setLoading] = useState(true);
+  const [sortValue, setSortValue] = useState("DATE_MODIFIED_DESC");
   const [notifications, setNotifications] = useState([]);
   const [selectedItems, setSelectedItems] = useState([]);
   const resourceName = {
@@ -62,19 +62,19 @@ export default function NotificationResourceList() {
     plural: "notifications",
   };
 
-  const emptyStateMarkup = !notifications.length ? (
+  const emptyStateMarkup = (
     <EmptyState
       heading="Empty product!!"
       image="https://cdn.shopify.com/s/files/1/2376/3301/products/emptystate-files.png"
     />
-  ) : undefined;
+  );
   useEffect(() => {
     setNotifications(items);
     setLoading(false);
   }, []);
   return (
-    <>
-      <LegacyCard>
+    <Stack vertical>
+      <Card>
         <ResourceList
           loading={loading}
           resourceName={resourceName}
@@ -94,22 +94,20 @@ export default function NotificationResourceList() {
           onSelectionChange={setSelectedItems}
           selectable
         />
-      </LegacyCard>
+      </Card>
 
-      <Box paddingBlockEnd={4} paddingBlockStart={8}>
-        <HorizontalStack align="center">
-          <Pagination
-            hasPrevious
-            onPrevious={() => {
-              console.log("Previous");
-            }}
-            hasNext
-            onNext={() => {
-              console.log("Next");
-            }}
-          />
-        </HorizontalStack>
-      </Box>
-    </>
+      <Stack distribution="center">
+        <Pagination
+          hasPrevious
+          onPrevious={() => {
+            console.log("Previous");
+          }}
+          hasNext
+          onNext={() => {
+            console.log("Next");
+          }}
+        />
+      </Stack>
+    </Stack>
   );
 }

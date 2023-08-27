@@ -1,8 +1,7 @@
-import { LegacyCard, LegacyTabs } from "@shopify/polaris";
+import { Card, Tabs } from "@shopify/polaris";
 import { useState, useCallback, useEffect, useLayoutEffect } from "react";
 import DisplaySetting from "./DisplaySetting/DisplaySetting";
-import TriggersSetting from "./TriggersSetting";
-
+import TriggersSetting from "./TriggersSetting/TriggersSetting";
 import tabs from "../../helpers/constants/tabs";
 import { useSearchParams } from "react-router-dom";
 export default function SettingsTab({ settings, handleChangeInput }) {
@@ -32,10 +31,10 @@ export default function SettingsTab({ settings, handleChangeInput }) {
       />
     );
   return (
-    <LegacyCard>
-      <LegacyTabs tabs={tabs} selected={selected} onSelect={handleTabChange}>
-        <LegacyCard.Section>{settingMarkup}</LegacyCard.Section>
-      </LegacyTabs>
-    </LegacyCard>
+    <Card>
+      <Tabs tabs={tabs} selected={selected} onSelect={handleTabChange}>
+        <Card.Section>{settingMarkup}</Card.Section>
+      </Tabs>
+    </Card>
   );
 }

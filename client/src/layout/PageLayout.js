@@ -3,13 +3,13 @@ import {
   Navigation,
   TopBar,
   Avatar,
-  Text,
-  HorizontalStack,
+  TextStyle,
+  Stack,
 } from "@shopify/polaris";
 import {
-  HomeFilledMinor,
-  NotificationFilledMajor,
-  SettingsFilledMinor,
+  HomeMinor,
+  NotificationMajor,
+  SettingsMinor,
 } from "@shopify/polaris-icons";
 
 import { useLocation, useNavigate } from "react-router-dom";
@@ -19,14 +19,12 @@ export default function PageLayout({ children }) {
   const navigate = useNavigate();
 
   const userMenuMarkup = (
-    <TopBar.UserMenu
-      customActivator={
-        <HorizontalStack wrap={false} blockAlign="center" gap={2}>
-          <Avatar size="small" initials="A" />
-          <Text>Avada</Text>
-        </HorizontalStack>
-      }
-    />
+    <div>
+      <Stack spacing="10" wrap={false} alignment="center">
+        <Avatar size="small" initials="A" />
+        <TextStyle>Avada</TextStyle>
+      </Stack>
+    </div>
   );
 
   const topBarMarkup = (
@@ -40,21 +38,21 @@ export default function PageLayout({ children }) {
           {
             url: "/",
             label: "Home",
-            icon: HomeFilledMinor,
+            icon: HomeMinor,
             selected: pathname === "/",
             onClick: () => navigate("/"),
           },
           {
             url: "/notifications",
             label: "Notifications",
-            icon: NotificationFilledMajor,
+            icon: NotificationMajor,
             selected: pathname?.includes("/notifications"),
             onClick: () => navigate("/notifications"),
           },
           {
             url: "/settings",
             label: "Settings",
-            icon: SettingsFilledMinor,
+            icon: SettingsMinor,
             selected: pathname?.includes("/settings"),
             onClick: () => navigate("/settings"),
           },
@@ -64,17 +62,7 @@ export default function PageLayout({ children }) {
   );
 
   return (
-    <Frame
-      logo={{
-        width: 124,
-        topBarSource: "https://i.imgur.com/LTYRxl7.png",
-        contextualSaveBarSource: "https://i.imgur.com/LTYRxl7.png",
-        url: "#",
-        accessibilityLabel: "Logo",
-      }}
-      topBar={topBarMarkup}
-      navigation={navigationMarkup}
-    >
+    <Frame topBar={topBarMarkup} navigation={navigationMarkup}>
       {children}
     </Frame>
   );

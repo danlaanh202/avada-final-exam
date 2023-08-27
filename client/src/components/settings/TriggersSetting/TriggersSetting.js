@@ -1,16 +1,15 @@
-import { TextField, VerticalStack } from "@shopify/polaris";
-import MySelect from "../ui/MySelect";
 import { useEffect } from "react";
+import { TextField, Stack } from "@shopify/polaris";
+import MySelect from "../../ui/MySelect";
 
 const TriggersSetting = ({ settings, handleChangeInput }) => {
   useEffect(() => {
-    console.log(settings);
     if (settings.allowShow === "all") {
       handleChangeInput("includedUrls", "");
     }
   }, [settings.allowShow]);
   return (
-    <VerticalStack gap={4}>
+    <Stack vertical>
       <MySelect
         id="allowShow"
         value={settings.allowShow}
@@ -35,7 +34,7 @@ const TriggersSetting = ({ settings, handleChangeInput }) => {
         autoComplete="off"
         helpText="Page URLs NOT to show the pop-up (seperated by new lines)"
       />
-    </VerticalStack>
+    </Stack>
   );
 };
 

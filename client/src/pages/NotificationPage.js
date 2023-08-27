@@ -1,10 +1,4 @@
-import {
-  Button,
-  HorizontalStack,
-  LegacyCard,
-  Page,
-  Text,
-} from "@shopify/polaris";
+import { Page } from "@shopify/polaris";
 import React from "react";
 import NotificationResourceList from "../components/notification/NotificationResourceList";
 
