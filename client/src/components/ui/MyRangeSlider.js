@@ -1,5 +1,4 @@
-import { Card, RangeSlider } from "@shopify/polaris";
-import { useState, useCallback } from "react";
+import { RangeSlider, TextStyle } from "@shopify/polaris";
 
 export default function MyRangeSlider({
   label,
@@ -7,12 +6,9 @@ export default function MyRangeSlider({
   rangeValue = 32,
   onChange,
   sliderId = "",
+  helpText = "",
 }) {
-  const suffixMarkup = (
-    <div className="suffix-markup">
-      {rangeValue} {suffixUnit}
-    </div>
-  );
+  const suffixMarkup = `${rangeValue} ${suffixUnit}`;
   return (
     <RangeSlider
       id={sliderId}
@@ -21,6 +17,7 @@ export default function MyRangeSlider({
       onChange={(val, id) => onChange(id, val)}
       suffix={suffixMarkup}
       output
+      helpText={helpText}
     />
   );
 }

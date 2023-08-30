@@ -1,11 +1,4 @@
-import {
-  Frame,
-  Navigation,
-  TopBar,
-  Avatar,
-  TextStyle,
-  Stack,
-} from "@shopify/polaris";
+import { Frame, Navigation, TopBar } from "@shopify/polaris";
 import {
   HomeMinor,
   NotificationMajor,
@@ -19,12 +12,13 @@ export default function PageLayout({ children }) {
   const navigate = useNavigate();
 
   const userMenuMarkup = (
-    <div>
-      <Stack spacing="10" wrap={false} alignment="center">
-        <Avatar size="small" initials="A" />
-        <TextStyle>Avada</TextStyle>
-      </Stack>
-    </div>
+    <TopBar.UserMenu
+      actions={[]}
+      name="Avada"
+      initials="A"
+      open={false}
+      onToggle={() => {}}
+    />
   );
 
   const topBarMarkup = (

@@ -5,6 +5,7 @@ import NotificationResourceList from "../components/notification/NotificationRes
 const NotificationPage = () => {
   return (
     <Page
+      fullWidth
       title="Notifications"
       subtitle="List of sales notifcation from Shopify"
     >

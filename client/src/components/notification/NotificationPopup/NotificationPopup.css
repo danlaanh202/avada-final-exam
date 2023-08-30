@@ -1,5 +1,5 @@
 .Avava-SP__Wrapper {
-  width: 293px;
+  width: 300px;
   position: relative;
   z-index: 99;
   color: #333;
@@ -43,6 +43,14 @@
   box-shadow: 3px 0 5px rgba(5, 5, 5, 0.07);
   background: #ffffff;
   padding: 5px;
+  position: relative;
+}
+.Avada-SP__CloseIcon {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 12px;
+  cursor: pointer;
 }
 .Avava-SP__Wrapper .Avava-SP__Image {
   height: 65px;

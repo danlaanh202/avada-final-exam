@@ -1,7 +1,7 @@
 import defaultSettings from "../helpers/constants/defaultSettings";
 import SettingsTab from "../components/settings/SettingsTab";
 import { useState } from "react";
-import { Page } from "@shopify/polaris";
+import { Layout, Page, Stack } from "@shopify/polaris";
 import { SaveMinor } from "@shopify/polaris-icons";
 import { NotificationPopup } from "../components/notification/NotificationPopup/NotificationPopup";
 
@@ -19,6 +19,7 @@ const SettingPage = () => {
   };
   return (
     <Page
+      fullWidth
       title="Settings"
       primaryAction={{
         content: "Save",
@@ -26,16 +27,18 @@ const SettingPage = () => {
         onAction: saveSettings,
       }}
     >
-      <div className="setting-page">
-        <NotificationPopup />
+      <Layout>
+        <Layout.Section secondary>
+          <NotificationPopup />
+        </Layout.Section>
 
-        <div className="setting-tab">
+        <Layout.Section>
           <SettingsTab
             settings={settings}
             handleChangeInput={handleChangeInput}
           />
-        </div>
-      </div>
+        </Layout.Section>
+      </Layout>
     </Page>
   );
 };

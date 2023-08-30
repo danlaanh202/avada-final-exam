@@ -72,6 +72,7 @@ export default function NotificationResourceList() {
     setNotifications(items);
     setLoading(false);
   }, []);
+  useEffect(() => {}, []);
   return (
     <Stack vertical>
       <Card>

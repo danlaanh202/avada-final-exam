@@ -1,10 +1,11 @@
 import { AppProvider } from "@shopify/polaris";
-import { Routes, Route, BrowserRouter, Outlet } from "react-router-dom";
+
 import React from "react";
 import PageLayout from "./layout/PageLayout";
 import HomePage from "./pages/HomePage";
 import NotificationPage from "./pages/NotificationPage";
 import SettingPage from "./pages/SettingPage";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (

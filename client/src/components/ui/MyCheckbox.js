@@ -1,4 +1,4 @@
-import { Checkbox, TextStyle } from "@shopify/polaris";
+import { Checkbox } from "@shopify/polaris";
 
 const MyCheckbox = ({
   label = "",
@@ -7,14 +7,12 @@ const MyCheckbox = ({
   checked = false,
 }) => {
   return (
-    <div className="checkbox-wrapper">
-      <Checkbox label={label} checked={checked} onChange={onChange} />
-      {helptext && (
-        <div className="helptext-wrapper">
-          <TextStyle color="subdued">{helptext}</TextStyle>
-        </div>
-      )}
-    </div>
+    <Checkbox
+      label={label}
+      checked={checked}
+      helpText={helptext}
+      onChange={onChange}
+    />
   );
 };
 
