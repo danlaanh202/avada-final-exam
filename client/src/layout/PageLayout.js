@@ -5,12 +5,14 @@ import {
   SettingsMinor,
 } from "@shopify/polaris-icons";
 
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 
 export default function PageLayout({ children }) {
   const { pathname } = useLocation();
-  const navigate = useNavigate();
-
+  const history = useHistory();
+  const handleNavigate = (path) => {
+    history.push(path);
+  };
   const userMenuMarkup = (
     <TopBar.UserMenu
       actions={[]}
@@ -34,21 +36,21 @@ export default function PageLayout({ children }) {
             label: "Home",
             icon: HomeMinor,
             selected: pathname === "/",
-            onClick: () => navigate("/"),
+            onClick: () => handleNavigate("/"),
           },
           {
             url: "/notifications",
             label: "Notifications",
             icon: NotificationMajor,
             selected: pathname?.includes("/notifications"),
-            onClick: () => navigate("/notifications"),
+            onClick: () => handleNavigate("/notifications"),
           },
           {
             url: "/settings",
             label: "Settings",
             icon: SettingsMinor,
             selected: pathname?.includes("/settings"),
-            onClick: () => navigate("/settings"),
+            onClick: () => handleNavigate("/settings"),
           },
         ]}
       />

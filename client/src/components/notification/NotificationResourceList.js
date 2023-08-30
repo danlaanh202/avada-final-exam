@@ -3,11 +3,11 @@ import {
   ResourceList,
   Pagination,
   Stack,
-  Box,
   EmptyState,
 } from "@shopify/polaris";
 import { useEffect, useState } from "react";
 import NotificationResourceItem from "./NotificationResourceItem";
+import { useLocation, useHistory } from "react-router-dom";
 const items = [
   {
     id: "1",
@@ -53,9 +53,9 @@ const items = [
   },
 ];
 export default function NotificationResourceList() {
-  const [loading, setLoading] = useState(true);
-  const [sortValue, setSortValue] = useState("DATE_MODIFIED_DESC");
-  const [notifications, setNotifications] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [sortValue, setSortValue] = useState("desc");
+  const [notifications, setNotifications] = useState(items);
   const [selectedItems, setSelectedItems] = useState([]);
   const resourceName = {
     singular: "notification",
@@ -68,11 +68,7 @@ export default function NotificationResourceList() {
       image="https://cdn.shopify.com/s/files/1/2376/3301/products/emptystate-files.png"
     />
   );
-  useEffect(() => {
-    setNotifications(items);
-    setLoading(false);
-  }, []);
-  useEffect(() => {}, []);
+
   return (
     <Stack vertical>
       <Card>
@@ -84,12 +80,11 @@ export default function NotificationResourceList() {
           sortValue={sortValue}
           emptyState={emptyStateMarkup}
           sortOptions={[
-            { label: "Newest update", value: "DATE_MODIFIED_DESC" },
-            { label: "Oldest update", value: "DATE_MODIFIED_ASC" },
+            { label: "Newest update", value: "desc" },
+            { label: "Oldest update", value: "asc" },
           ]}
-          onSortChange={(selected) => {
-            setSortValue(selected);
-            console.log(`Sort option changed to ${selected}.`);
+          onSortChange={(sortVal) => {
+            setSortValue(sortVal);
           }}
           selectedItems={selectedItems}
           onSelectionChange={setSelectedItems}

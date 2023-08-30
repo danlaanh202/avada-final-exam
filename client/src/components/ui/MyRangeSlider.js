@@ -1,4 +1,4 @@
-import { RangeSlider, TextStyle } from "@shopify/polaris";
+import { RangeSlider } from "@shopify/polaris";
 
 export default function MyRangeSlider({
   label,

@@ -1,7 +1,7 @@
 import defaultSettings from "../helpers/constants/defaultSettings";
 import SettingsTab from "../components/settings/SettingsTab";
 import { useState } from "react";
-import { Layout, Page, Stack } from "@shopify/polaris";
+import { Layout, Page } from "@shopify/polaris";
 import { SaveMinor } from "@shopify/polaris-icons";
 import { NotificationPopup } from "../components/notification/NotificationPopup/NotificationPopup";
 

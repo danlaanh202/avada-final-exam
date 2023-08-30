@@ -83,33 +83,3 @@ const DisplaySetting = ({ settings = defaultSettings, handleChangeInput }) => {
 };
 
 export default DisplaySetting;
-// {sliderSettings?.length > 0 &&
-//   sliderSettings.map(
-//     (item, index, arr) =>
-//       !(index % 2) && (
-//         <div className="slider-items__wrapper" key={item.helpText}>
-//           <div className="slider-item__wrapper">
-//             <MyRangeSlider
-//               onChange={handleChangeInput}
-//               rangeValue={settings[arr[index].stateKey]}
-//               label={arr[index].label}
-//               helpText={arr[index].helpText}
-//               suffixUnit={arr[index].suffixUnit}
-//               sliderId={arr[index].stateKey}
-//             />
-//           </div>
-//           <div className="slider-item__wrapper">
-//             {index + 1 !== sliderSettings.length && (
-//               <MyRangeSlider
-//                 onChange={handleChangeInput}
-//                 rangeValue={settings[arr[index + 1].stateKey]}
-//                 label={arr[index + 1].label}
-//                 helpText={arr[index + 1].helpText}
-//                 suffixUnit={arr[index + 1].suffixUnit}
-//                 sliderId={arr[index + 1].stateKey}
-//               />
-//             )}
-//           </div>
-//         </div>
-//       )
-//   )}
